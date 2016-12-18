@@ -1,0 +1,1181 @@
+// Created by Hivan Du 2015(Siso brand interactive team).
+
+/*======================================================================
+      Global
+  ======================================================================*/
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+html {
+  height: 100%;
+  font-family: "microsoft yahei", Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0  auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+p, a, button, span {
+  -webkit-font-smoothing: antialiased;
+}
+
+input {
+  outline: none;
+}
+
+.pa { position: absolute; }
+
+/* psd width `divided` 10 */
+$page-base-rem : 75; /* 750/10=75 */
+
+@mixin calWidth ($value) {
+  width: $value*1rem / $page-base-rem;
+}
+
+@mixin calHeight ($value) {
+  height: $value*1rem / $page-base-rem;
+}
+
+@mixin calTop ($value) {
+  top: $value*1rem / $page-base-rem;
+}
+
+@mixin calBottom ($value) {
+  bottom: $value*1rem / $page-base-rem;
+}
+
+@mixin calLeft ($value) {
+  left: $value*1rem / $page-base-rem;
+}
+
+@mixin calRight ($value) {
+  right: $value*1rem / $page-base-rem;
+}
+
+
+/* the class "content" is used for flexible plugin */
+.content{
+  display: block;
+  min-width: 320px;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+/* swiper */
+.swiper-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+.swiper-wrapper{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide{
+  height: 100%;
+  font-size: 58px;
+  background: url("http://7xp91r.com1.z0.glb.clouddn.com/bg.jpg") no-repeat #423662;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
+
+/* scene */
+.swiper-slide {
+  img{
+    position: absolute;
+  }
+  .Ornamentation01{
+    left: 8%;
+  }
+  .Ornamentation02{
+    left: 8%;
+    transform:scale(-1);
+  }
+  .box2{
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+  }
+}
+.icon{
+  position: absolute;
+  bottom: 2%;
+  left: 46%;
+  z-index: 999;
+  animation: nextPage 1s infinite;
+}
+
+.swiper-slide.active{
+  .show{
+    animation: rotateIn 1s 0.1s forwards;
+  }
+
+}
+
+
+
+.scene01{
+   img{
+     opacity: 0;
+   }
+   .img01{
+     top: 22%;
+   }
+   .paopao1{
+     top: 17%;
+   }
+   .paopao2{
+     top: 19.2%;
+   }
+   .paopao3{
+     top:24.2%;
+   }
+   .ball01{
+     bottom: 0%;
+     right: 0%;
+   }
+   .ball02{
+      top: 77%;
+     left: 6%;
+   }
+   .ball03{
+     top: 10%;
+     left: 6%;
+   }
+   .spiral01{
+     top: 19%;
+     left: 36%;
+   }
+   .Icecream01{
+     top:31%;
+     left: 80%;
+   }
+   .deer01{
+     top:66%;
+     left: 76%;
+   }
+  .shansuo{
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .hundong{
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .writing01{
+    top:6%;
+    left: 15%;
+  }
+  .writing02{
+    bottom: 13%;
+    left: 17.4%;
+  }
+  .logo{
+    opacity: 1;
+    left: 38%;
+    bottom: 6%;
+  }
+
+ }
+.scene01.active{
+  .img01{
+    animation: bounceIn 1s 0.3s forwards;
+  }
+  .paopao1{
+    animation: bounceIn 1s 0.4s  forwards;
+  }
+  .paopao2{
+    animation: bounceIn 1s 0.46s  forwards;
+  }
+  .paopao3{
+    animation: bounceIn 1s 0.5s  forwards;
+  }
+  .ball01{
+    animation: sacle 3s ease 0.5s forwards;
+    transform-origin: 100% 100%;
+  }
+  .ball02{
+    animation: sacle 1s linear 0.5s forwards;
+  }
+  .ball03{
+    animation: moveopacity 11s linear 0.5s infinite;
+  }
+  .spiral01{
+    animation: -moveopacity 21s linear 0.5s infinite;
+  }
+  .Icecream01{
+    animation: moveopacity 8s linear 0.5s infinite;
+  }
+  .deer01{
+    animation: -moveopacity 16s linear 0.5s infinite;
+  }
+  .shansuo{
+    animation: moveopacity 16s linear 2.5s infinite;
+  }
+  .writing02{
+    animation: sacle 2s ease 0.2s forwards;
+  }
+  .writing01{
+    animation: sacle 2s ease 0.5s forwards;
+  }
+  .hundong{
+    animation: huandong 6s ease 0.5s infinite;
+  }
+
+}
+
+.scene02{
+  img{
+    opacity: 0;
+  }
+  .all-ball{
+    top: 15%;
+  }
+  .funnel01{
+    top: 3%;
+    right: 6%;
+  }
+  .funnel02{
+    left: 1%;
+    top: 4%;
+    opacity:1;
+  }
+  .funnel03{
+    left: 69%;
+    top: 18%;
+    opacity:1;
+  }
+  .funnel04{
+    left: 16%;
+    top: 58%;
+  }
+  .music06{
+    left: 41%;
+    top: 62%;
+    opacity:1;
+  }
+  .music04{
+    left: 30%;
+    top: 65%;
+    opacity:1;
+  }
+  .music05{
+    opacity:1;
+    left: 41%;
+    top: 75%;
+  }
+  .Reproducers01{
+    right: 0%;
+    bottom: 0%;
+  }
+  .music07{
+    left: 60%;
+    top: 75%;
+    opacity:1;
+  }
+  .music08{
+    left: 72%;
+    top: 73%;
+    opacity:1;
+  }
+  .Ornamentation01{
+    left: 8%;
+    top: 30%;
+  }
+  .Ornamentation02{
+    left: 8%;
+    top: 50%;
+  }
+  .writing01{
+    left: 17.6%;
+    top: 39%;
+  }
+  .box{
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  .show{
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+  }
+}
+.scene02.active{
+    .funnel02{
+      animation: yuan 18s 0.4s infinite;
+      transform-origin:50% 50%;
+    }
+   .funnel01{
+     animation: -yuan 23s 0.4s infinite;
+     transform-origin:50% 50%;
+   }
+  .all-ball{
+    animation:  bounceIn 1.5s 0.2s forwards;
+  }
+  .box{
+    animation:  -moveopacity 22s 1.4s infinite;
+  }
+  .funnel03{
+    animation:  moveopacity 26s 1.4s infinite;
+  }
+  .Ornamentation01,.Ornamentation02{
+    animation:  show 1s .5s forwards;
+  }
+  .writing01{
+  animation:  fadeInDown 1s 1.2s forwards;
+  }
+
+  .Reproducers01{
+    animation:  show 1s .2s forwards;
+  }
+  .music07{
+    animation:  moveopacity 18s 1s infinite;
+  }
+  .music06{
+    animation:  moveopacity 25s .9s infinite;
+  }
+  .music05{
+    animation:  moveopacity 23s 1s infinite;
+  }
+  .music08{
+    animation:  huandong 12s 1s infinite;
+  }
+
+}
+
+.scene03{
+  img{
+    position: absolute;
+    opacity: 0;
+  }
+  .img1{
+    top: 7%;
+    left: 7%;
+  }
+  .img2{
+    top: 10%;
+    right: 3%;
+  }
+  .img3{
+    top: 30%;
+    left: 10%;
+  }
+  .img4{
+    top: 78%;
+    left: 60%;
+  }
+  .img5{
+    top: 35%;
+    left: 0%;
+  }
+  .img6{
+    top:55%;
+    left:6%;
+  }
+  .img7{
+    top:28%;
+    right:6%;
+  }
+  .img8{
+    bottom:2%;
+    left:6%;
+  }
+  .title{
+    top:20%;
+    left:20%;
+  }
+  .Writing01{
+    top:24.3%;
+    left:32%;
+  }
+  .Ornamentation01{
+    top:37.6%;
+  }
+  .Ornamentation02{
+    top:70%;
+  }
+  .writing01{
+    top:41.3%;
+    left:31%;
+  }
+  .writing02{
+    top:50.3%;
+    left:32%;
+  }
+  .writing03{
+    top:58%;
+    left:32%;
+  }
+  .writing04{
+    top:65.5%;
+    left:27%;
+  }
+  .dian{
+    top:47.5%;
+    left:49%;
+  }
+  .box2{
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+  }
+  .box1{
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+  }
+}
+.scene03.active{
+  .box2{
+    animation: fadeInRight 1.2s 0.4s forwards;
+  }
+  .box1{
+    animation: fadeInLeft 1.2s 0.4s forwards;
+  }
+  .img1{
+    animation: -yuan 18s 0.4s infinite;
+    transform-origin:50% 50%;
+  }
+  .img2{
+    animation: yuan 18s 0.4s infinite;
+    transform-origin:50% 50%;
+    z-index: 2;
+  }
+  .img3{
+    opacity: 1;
+    animation: huandong 18s 0.4s infinite;
+  }
+  .img4{
+    opacity: 1;
+    animation: moveopacity 18s 0.6s infinite;
+  }
+  .img5{
+    opacity: 1;
+    animation: -moveopacity 18s 0.5s infinite;
+  }
+  .img6{
+    opacity: 1;
+    animation: -moveopacity 18s 0.3s infinite;
+  }
+  .img7{
+    opacity: 1;
+    animation: moveopacity 18s 0.2s infinite;
+  }
+  .img8{
+    opacity: 1;
+    animation: moveopacity 18s 0.4s infinite;
+  }
+  .title{
+    animation: fadeInDown 2s 1s forwards;
+  }
+  .Writing01{
+    animation: show 4s 1.3s forwards;
+  }
+  .Ornamentation01{
+    animation: show 4s 1.3s forwards;
+  }
+  .Ornamentation02{
+    animation: show 4s 1.3s forwards;
+  }
+  .writing01{
+    animation: fadeInLeft 1s 2.3s forwards;
+  }
+  .writing02{
+    animation: fadeInRight 1s 2.3s forwards;
+  }
+  .writing03{
+    animation: fadeInLeft 1s 2.3s forwards;
+  }
+  .writing04{
+    animation: fadeInRight 1s 2.3s forwards;
+  }
+  .dian{
+    animation: show 5s 1.6s forwards;
+  }
+}
+
+.scene04{
+  img{
+    position: absolute;
+    opacity: 0;
+  }
+  .ball{
+    top: 22.3%;
+  }
+  .digital01{
+    top: 5%;
+    left: 2.5%;
+  }
+  .long{
+    top: 2%;
+    right: 2.5%;
+  }
+  .ball02{
+    top: 15%;
+    right: 6.5%;
+  }
+  .ball03{
+    top:75%;
+    left: 6.5%;
+  }
+  .ball04{
+    top: 60%;
+    left: 6.5%;
+  }
+  .ball05{
+    bottom: 0%;
+    right: 0.5%;
+  }
+  .title{
+    top: 17%;
+    left:19.5%;
+  }
+  .Writing01{
+    top: 19.3%;
+    left:34.5%;
+  }
+  .Ornamentation01{
+    top: 35%;
+  }
+  .Ornamentation02{
+    top: 68%;
+  }
+  .Writing02{
+    top: 42.3%;
+    left: 12%;
+  }
+  .Writing03{
+    top: 48.3%;
+    left: 33.5%;
+  }
+  .decoration01{
+    top: 54%;
+    left: 28.1%;
+  }
+  .Writing04{
+    top: 58.3%;
+    left: 18.5%;
+  }
+  .Writing05{
+    top: 64.3%;
+    left: 41.5%;
+  }
+  .box2{
+    top: 0%;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+}
+.scene04.active{
+  .box2{
+    animation: rollIn 1.6s 0.1s forwards;
+  }
+  .ball{
+    animation: moveopacity 22s 0.6s infinite;
+  }
+  .digital01{
+    opacity: 1;
+    animation: moveopacity 19s 0.2s infinite;
+  }
+  .long{
+    animation: moveopacity 25s 0.5s infinite;
+  }
+  .ball02{
+    animation: -moveopacity 18s 0.5s infinite;
+  }
+  .ball03{
+    animation: -yuan 19s 0.1s infinite;
+  }
+  .ball04{
+    animation: -moveopacity 18s 0.1s infinite;
+  }
+  .ball05{
+    animation: huandong 19s 0.5s infinite;
+  }
+  .title{
+    animation: fadeInDown 2s 1s forwards;
+  }
+  .Writing01{
+    animation: show 4s 1.3s forwards;
+  }
+  .Ornamentation01{
+    animation: show 4s 1.3s forwards;
+  }
+  .Ornamentation02{
+    animation: show 4s 1.3s forwards;
+  }
+  .Writing02{
+    animation: fadeInLeft 1s 2.3s forwards;
+  }
+  .Writing03{
+    animation: fadeInRight 1s 2.3s forwards;
+  }
+  .Writing04{
+    animation: fadeInLeft 1s 2.3s forwards;
+  }
+  .Writing05{
+    animation: fadeInRight 1s 2.3s forwards;
+  }
+  .decoration01{
+    animation: show 5s 1.6s forwards;
+  }
+}
+
+.scene05{
+  img{
+    opacity: 0;
+  }
+  .ball{
+    top: 10%;
+  }
+  .cream01{
+    top: 17%;
+    right: 4%;
+  }
+  .cream02{
+    top: 5%;
+    left: 8%;
+  }
+  .hourglass01{
+    top: 1%;
+    right: 2%;
+  }
+  .apple01{
+    bottom:10%;
+    left: 2%;
+  }
+  .ring01{
+    top: 71%;
+    left: 58%;
+  }
+  .spoon01{
+    right: 0%;
+    bottom: 5%;
+  }
+  .writing02{
+    top: 20%;
+    left: 23%;
+  }
+  .Ornamentation01{
+    top: 45%;
+  }
+  .Ornamentation02{
+    top: 68%;
+  }
+  .writing01{
+    top:52%;
+    left: 11%;
+  }
+  .box2{
+    top: 0%;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+}
+.scene05.active{
+  .box2{
+    animation: bounce 1.7s .5s forwards;
+  }
+  img{
+    opacity: 0;
+  }
+  .ball{
+    top: 10%;
+    animation: bounceIn 1s .5s forwards;
+  }
+  .cream01{
+    animation: -yuan 18s 0.4s infinite;
+  }
+  .cream02{
+    animation: -moveopacity 22s 0.4s infinite;
+  }
+  .hourglass01{
+    animation: moveopacity 19s 0.4s infinite;
+  }
+  .apple01{
+    animation: huandong 18s 0.4s infinite;
+  }
+  .ring01{
+    animation: -moveopacity 22s 0.4s infinite;
+  }
+  .spoon01{
+    animation: moveopacity 33s 0.4s infinite;
+  }
+  .writing02{
+    animation: bounceIn 1s 0.2s forwards;
+  }
+  .Ornamentation01{
+    animation: show 4s 1.3s forwards;
+  }
+  .Ornamentation02{
+    animation: show 4s 1.3s forwards;
+  }
+  .writing01{
+    animation:fadeInDown 2s 1.3s forwards;
+  }
+}
+
+.scene06{
+  img{
+    opacity: 0;
+  }
+  .boll{
+    top: 40%;
+    left: 2%;
+  }
+  .lu{
+    top: 0%;
+    left: 2%;
+  }
+  .qiqiu{
+    top:12%;
+    right: 6%;
+  }
+  .ball03{
+    bottom:2%;
+    right: 7%;
+    z-index: 2;
+  }
+  .ball04{
+    top: 80%;
+    left: 32%;
+  }
+  .ball05{
+    top: 84%;
+    left: 12%;
+  }
+  .ball06{
+    top: 30%;
+    left: 2%;
+  }
+  .title{
+    top:20%;
+    left:20%;
+  }
+  .writing01{
+    top:24.4%;
+    left:24%;
+  }
+  .Ornamentation01{
+    top: 38%;
+  }
+  .Ornamentation02{
+    top: 74%;
+  }
+  .writing02{
+    top: 44%;
+    left: 23%;
+  }
+  .writing03{
+    top: 56%;
+    left: 23%;
+  }
+  .writing04{
+    top: 66%;
+    left: 16.5%;
+  }
+  .fenx{
+    top: 82%;
+    left: 25.1%;
+  }
+  .box2{
+    top: 0%;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+}
+
+.scene06.active{
+  .boll{
+    animation: -moveopacity 12s 0.4s infinite;
+  }
+  .lu{
+    animation: moveopacity 22s 0.4s infinite;
+  }
+  .qiqiu{
+    animation: -moveopacity 19s 0.4s infinite;
+  }
+  .ball03{
+    animation: huandong 22s 0.4s infinite;
+  }
+  .ball04{
+    animation: -moveopacity 27s 0.4s infinite;
+  }
+  .ball05{
+    animation: yuan 22s 0.4s infinite;
+  }
+  .ball06{
+    animation: -yuan 22s 0.4s infinite;
+  }
+  .title{
+    animation: fadeInDown 2s 0.4s forwards;
+  }
+  .writing01{
+    animation: show 2s 1s forwards;
+  }
+  .Ornamentation01{
+    animation: show 2s 1s forwards;
+  }
+  .Ornamentation02{
+    animation: show 2s 1s forwards;
+  }
+  .writing02{
+    animation: fadeInDown 2s 2s forwards;
+  }
+  .writing03{
+    animation: fadeInDown 2s 2.5s forwards;
+  }
+  .writing04{
+    animation: fadeInDown 2s 3s forwards;
+  }
+  .fenx{
+    animation: fadeInDown 2s 3s forwards;
+  }
+  .box2{
+    animation: bounceIn 1.5s 0.5s forwards;
+  }
+}
+/*======================================================================
+      Responsive
+  ======================================================================*/
+@media screen and (max-width: 1215px) {
+
+}
+
+/*======================================================================
+      animation
+  ======================================================================*/
+@-webkit-keyframes wobble {
+  from {
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  15% {
+    -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+
+  30% {
+    -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-30%, 0, 0);
+    -ms-transform: translate3d(-30%, 0, 0);
+    transform: translate3d(-30%, 0, 0)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(30%, 0, 0);
+    -ms-transform: translate3d(30%, 0, 0);
+    transform: translate3d(30%, 0, 0)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none
+  }
+}
+
+@keyframes yuan {
+  to{
+    opacity:1;
+    transform:rotate( 0deg );
+  }
+  from{
+    opacity:1;
+    transform:rotate( -359deg );
+  }
+}
+
+@keyframes show {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes -yuan {
+  to{
+    opacity:1;
+    transform:rotate( 0deg );
+  }
+  from{
+    opacity:1;
+    transform:rotate( 359deg );
+  }
+}
+
+@keyframes moveopacity {
+  0%{
+    opacity:1;
+    transform:translate3d(0,0,0) ;
+  }
+  30%{
+    transform:translate3d(70px,20px,0) ;
+  }
+  70%{
+    transform:translate3d(20px,60px,0) ;
+  }
+  100%{
+    opacity:1;
+    transform:translate3d(0,0,0) ;
+  }
+}
+
+@keyframes -moveopacity {
+  0%{
+    opacity:1;
+    transform:translate3d(0,0,0) ;
+  }
+  30%{
+    transform:translate3d(-70px,-20px,0) ;
+  }
+  70%{
+    transform:translate3d(-20px,-60px,0) ;
+  }
+  100%{
+    opacity:1;
+    transform:translate3d(0,0,0) ;
+  }
+}
+
+@keyframes huandong {
+  0%{
+    opacity:1;
+    transform:translate3d(0,0,0) ;
+  }
+  30%{
+    transform:translate3d(20px,0px,0) ;
+  }
+  70%{
+    transform:translate3d(0px,20px,0) ;
+  }
+  100%{
+    opacity:1;
+    transform:translate3d(0,0,0) ;
+  }
+}
+
+@keyframes sacle {
+  0%{
+    opacity:0.5;
+    transform:scale(0.2);
+  }
+  100%{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+@keyframes bounceIn {
+  0%, 100%, 20%, 40%, 60%, 80% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+    transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    -ms-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3)
+  }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    -ms-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1)
+  }
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    -ms-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9)
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.02, 1.02, 1.02);
+    -ms-transform: scale3d(1.02, 1.02, 1.02);
+    transform: scale3d(1.02, 1.02, 1.02)
+  }
+  80% {
+    -webkit-transform: scale3d(.98, .98, .98);
+    -ms-transform: scale3d(.98, .98, .98);
+    transform: scale3d(.98, .98, .98)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1)
+  }
+}
+
+
+@-webkit-keyframes nextPage {
+  0% {
+    -webkit-transform: translateY(30px) ;
+    opacity: 0.9;
+  }
+  50% {
+    -webkit-transform: translateY(20px) ;
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translateY(10px) ;
+    opacity: 0;
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    -ms-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0
+  }
+  100% {
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    opacity: 1
+  }
+}
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    -ms-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none
+  }
+}
+@keyframes bounce {
+  0%, 100%, 20%, 53%, 80% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+    transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+  }
+  40%,
+  43% {
+    -webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+    transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+    -webkit-transform: translate3d(0, -30px, 0);
+    -ms-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0)
+  }
+  70% {
+    -webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+    transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+    -webkit-transform: translate3d(0, -15px, 0);
+    -ms-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0)
+  }
+  90% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -4px, 0);
+    -ms-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0)
+  }
+  100% {
+    opacity: 1;
+  }
+}
